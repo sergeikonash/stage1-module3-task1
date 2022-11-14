@@ -9,7 +9,8 @@ public class Generics {
     public <T> List<T> boxingMethod(T name) {
         List<T> firstList = new ArrayList<>();
         firstList.add(name);
-        List<T> secondList = new ArrayList<>(firstList);
+        List<T> secondList = firstList;
+
         return secondList;
     }
 
@@ -22,4 +23,5 @@ public class Generics {
     public <T> void cloneMethod(List<T> consumer, List<? extends T> producer) {
         consumer.addAll(producer);
     }
+
 }
