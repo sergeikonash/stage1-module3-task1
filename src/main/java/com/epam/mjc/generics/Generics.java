@@ -6,11 +6,11 @@ import java.util.List;
 public class Generics {
 
     //Refactor Method-1
-    public <T> List<T> boxingMethod(T name) {
-        List<T> firstList = new ArrayList<>();
+    public List<String> boxingMethod(String name) {
+        List<String> firstList = new ArrayList<>();
         firstList.add(name);
-        List<T> secondList = firstList;
-
+        List<String> secondList = new ArrayList<>();
+        secondList.add(String.valueOf(firstList));
         return secondList;
     }
 
@@ -23,5 +23,4 @@ public class Generics {
     public <T> void cloneMethod(List<T> consumer, List<? extends T> producer) {
         consumer.addAll(producer);
     }
-
 }
